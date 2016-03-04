@@ -89,7 +89,7 @@ ark "elasticsearch" do
   group node.elasticsearch[:user]
   version node.elasticsearch[:version]
   has_binaries ['bin/elasticsearch', 'bin/plugin']
-  checksum node.elasticsearch[:checksum]
+  checksum node.elasticsearch[:checksum] if node.elasticsearch[:checksum]
   prefix_root   ark_prefix_root
   prefix_home   ark_prefix_home
 
